@@ -1,6 +1,6 @@
 # Account Number and Prize Generator
 
-Test
+My is to build an application that genorates a random number and letter that is then outputted to create a prize. The application will be set-up using varied technologies such as docker, jenkins and flask.
 
 # Requirments
 
@@ -20,6 +20,22 @@ This could also provide a record of any issues or risks that you faced creating 
 
 You should consider the concept of MVP (Minimum Viable Product) as you plan your project, complete all the requirements before you add extra functionality that is not specified above
 
-# Title
+# Trello Board
+
+Text
+
+# Developments Pipleine
+
+Text
+
+# Test Results
+
+Text
+
+# Risk Assessments
+
+Text
+
+# Refrences
 
 Text
