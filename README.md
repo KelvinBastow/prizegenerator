@@ -6,7 +6,6 @@ My is to build an application that genorates a random number and letter that is 
 
 The requirements set for the project are below.
 Note that these are a minimum set of requirements and can be added onto during the duration of the project.
-
 The requirements of the project are as follows:
 
 - An Asana board (or equivalent Kanban board tech) with full expansion on tasks needed to complete the project.
@@ -18,7 +17,8 @@ This could also provide a record of any issues or risks that you faced creating 
 - As part of the project, you need to create an Ansible Playbook that will provision the environment that your application needs to run.
 - The project must make use of a reverse proxy to make your application accessible to the user.
 
-You should consider the concept of MVP (Minimum Viable Product) as you plan your project, complete all the requirements before you add extra functionality that is not specified above
+You should consider the concept of MVP (Minimum Viable Product) as you plan your project, complete all the requirements before you add extra functionality that is not specified above.
+.
 
 # Trello Board
 
