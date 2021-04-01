@@ -1,16 +1,44 @@
 version: '3.7'
 services:
-  frontend:
-    container_name: frontend
-    build: ./frontend
-    image: python-frontend:latest
+  service1:
+    container_name: service1
+    build: ./service1
+    image: python-service1:latest
     ports:
     - target: 5000
       published: 5000
-  backend:
-    container_name: backend
-    build: ./backend
-    image: python-backend:latest
+      protocol: tcp
+  service2:
+    container_name: service2
+    build: ./service2
+    image: python-service2:latest
     ports:
-    - target: 5001
-      published: 5001
+    - target: 5000
+      published: 5000
+      protocol: tcp
+  service3:
+    container_name: service3
+    build: ./service3
+    image: python-service3:latest
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+  service4:
+    container_name: service4
+    build: ./service4
+    image: python-service4:latest
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+  nginx:
+    image: nginx:latest
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    volumes: 
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.com

@@ -20,7 +20,7 @@ app = Flask(__name__)
 def hostname():
     return str(getenv("HOSTNAME"))
 
-@app.route("/random")
+@app.route("/randomint")
 def random_generator():
     return str(randint(0, 9999))
 
