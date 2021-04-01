@@ -7,7 +7,7 @@ COPY . .
 # Install pip dependencies from requirements
 RUN pip3 install -r requirements.txt
 # Set YOUR_NAME environment variable
-ENV YOUR_NAME="Kelvin"
+# ENV YOUR_NAME="Kelvin"
 # Expose the correct port
 EXPOSE 5000
 # Create an entrypoint

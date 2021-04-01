@@ -29,7 +29,17 @@ def random_number_generator():
         ran_num = random_rangeint(1,9)
         num_string = num_string + str(ran_num)
         count = count + 1
-    return(random_number_generator)
+    print (random.randint(0, 9))
 
 if __name__=="__main__":
     app.run(host = "0.0.0.0", port = 5001, debug = True)
+
+# set an emply list
+
+# statt a loop that goes up to 6
+
+# in the loop, randomize between 0 and 9
+
+# add that random value to your empty list
+
+# return the list.
