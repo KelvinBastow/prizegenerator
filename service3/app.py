@@ -12,7 +12,7 @@
 
 from flask import Flask
 from os import getenv
-from random import randint, randstr
+from random import random
 
 app = Flask(__name__)
 
@@ -20,9 +20,16 @@ app = Flask(__name__)
 def hostname():
     return str(getenv("HOSTNAME"))
 
-@app.route("/randomint")
-def random_generator():
-    return str(randint(0, 9999))
+@app.route("/randomletter")
+def random_letter_generator():
+    count = 0
+    string = ""
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    while(count < 6):
+        new_letter = random.choice(alphabet)
+        string = string + new_letter
+        count = count + 1
+    print(string)
 
 if __name__=="__main__":
-    app.run(host = "0.0.0.0", port = 5000, debug = True)
+    app.run(host = "0.0.0.0", port = 5002, debug = True)

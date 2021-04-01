@@ -10,9 +10,28 @@
 # One that creates a 6-digit number.
 # One that creates an 8-digit number.
 
+# from flask import Flask
+# from os import getenv
+# from random import randint, randstr
+
+# app = Flask(__name__)
+
+# @app.route("/hostname")
+# def hostname():
+#     return str(getenv("HOSTNAME"))
+
+# @app.route("/randomstr")
+# def random_generator():
+# # def id_generator(size=6, chars=string.ascii_uppercase + string.ascii_lowercase):
+# #     return ''.join(random.choice(chars) for _ in range(size))
+#     return str(randstr("A" "a", "Z" "z"))
+
+# if __name__=="__main__":
+#     app.run(host = "0.0.0.0", port = 5000, debug = True)
+
 from flask import Flask
 from os import getenv
-from random import randint, randstr
+from random import random
 
 app = Flask(__name__)
 
@@ -20,9 +39,18 @@ app = Flask(__name__)
 def hostname():
     return str(getenv("HOSTNAME"))
 
-@app.route("/randomstr")
-def random_generator():
-    return str(randstr("A" "a", "Z" "z"))
+@app.route("/randomnumber")
+def random_number_generator():
+    count = 0
+    num_string = ""
+    while(count < 6):
+        get_random = random_rangeint(1,9)
+        num_string = num_string + str(get_random)
+        string = string + new_number
+        count = count + 1
+    return num_string
+
+print(random_number_generator())
 
 if __name__=="__main__":
-    app.run(host = "0.0.0.0", port = 5000, debug = True)
+    app.run(host = "0.0.0.0", port = 5001, debug = True)

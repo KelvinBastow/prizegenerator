@@ -13,16 +13,16 @@ services:
     build: ./service2
     image: python-service2:latest
     ports:
-    - target: 5000
-      published: 5000
+    - target: 5001
+      published: 5001
       protocol: tcp
   service3:
     container_name: service3
     build: ./service3
     image: python-service3:latest
     ports:
-    - target: 5000
-      published: 5000
+    - target: 5002
+      published: 5002
       protocol: tcp
   service4:
     container_name: service4
@@ -32,13 +32,13 @@ services:
     - target: 5000
       published: 5000
       protocol: tcp
-  nginx:
-    image: nginx:latest
+  db:
+    container_name: mysql
+    build: ./db
     ports:
-    - target: 80
-      published: 80
+    - target: 3306
+      published: 3306
       protocol: tcp
-    volumes: 
-    - type: bind
-      source: ./nginx/nginx.conf
-      target: /etc/nginx/nginx.com
+    environment:
+      MYSQL_DATABASE: prizegenerator
+      MYSQL_ROOT_PASSWORD: kelvinrules
