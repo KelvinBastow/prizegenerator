@@ -29,7 +29,7 @@ def random_letter_generator():
         new_letter = random.choice(alphabet)
         string = string + new_letter
         count = count + 1
-    print(string)
+    return(string)
 
 if __name__=="__main__":
     app.run(host = "0.0.0.0", port = 5002, debug = True)

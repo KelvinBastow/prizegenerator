@@ -3,20 +3,21 @@
 # and finally for persisting some data in an SQL database.
 
 from flask import Flask, render_template
-from flask_sqlalchemy import SQLAlchemy
+# from flask_sqlalchemy import SQLAlchemy
 import requests
-from os import getenv
+# from os import getenv
 
 app = Flask(__name__)
-db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
 @app.route("/")
 def home():
-    hostname = getenv("HOSTNAME")
-    backend_hostname = requests.get("http://service1:5000/hostname")
-    random = requests.get("http://service4:5001/randomstr")
+    service_four_default_response=requests.get("http://service4:5003/")
+    service_four_service_two_response=requests.get("http://service4:5003/service-two")
+    service_four_service_three_response=requests.get("http://service4:5003/service-three")
+    return f'{service_four_default_response.text} {service_four_service_two_response.text} {service_four_service_three_response.text}'
     
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:kelvinrules@mysql:3306/prizegenerator'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:kelvinrules@mysql:3306/prizegenerator'
 
 if __name__=='__main__':
   app.run(host='0.0.0.0', port=5000, debug=True)

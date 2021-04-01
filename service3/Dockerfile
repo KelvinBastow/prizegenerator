@@ -11,4 +11,4 @@ ENV YOUR_NAME="Kelvin"
 # Expose the correct port
 EXPOSE 5000
 # Create an entrypoint
-ENTRYPOINT ["python", "app.py"]
+ENTRYPOINT ["python3", "app.py"]

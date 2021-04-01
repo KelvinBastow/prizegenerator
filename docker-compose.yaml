@@ -29,16 +29,16 @@ services:
     build: ./service4
     image: python-service4:latest
     ports:
-    - target: 5000
-      published: 5000
+    - target: 5003
+      published: 5003
       protocol: tcp
-  db:
-    container_name: mysql
-    build: ./db
-    ports:
-    - target: 3306
-      published: 3306
-      protocol: tcp
-    environment:
-      MYSQL_DATABASE: prizegenerator
-      MYSQL_ROOT_PASSWORD: kelvinrules
+  # db:
+  #   container_name: mysql
+  #   build: ./db
+  #   ports:
+  #   - target: 3306
+  #     published: 3306
+  #     protocol: tcp
+  #   environment:
+  #     MYSQL_DATABASE: prizegenerator
+  #     MYSQL_ROOT_PASSWORD: kelvinrules
