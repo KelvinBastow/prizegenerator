@@ -12,7 +12,7 @@
 
 from flask import Flask, Response, request
 from os import getenv
-from random import randint
+import random
 import string
 
 app = Flask(__name__)
@@ -23,13 +23,18 @@ def hostname():
 
 @app.route("/randomletter", methods=['GET'])
 def random_letter_generator():
-    letters = 8
-    uppercase_letters = "".join(random.choice(string.ascii_uppercase) for i in range(letters))
-#    lowercase_letters = "".join(random.choice(string.ascii_lowercase) for i in range(letters))
+    letter_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    letter= random.choices(letter_list, weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], k=6)
 
+    print('these are your letters :')
+    dash_list= print(''.join(letter))
 
-    return uppercase_letters
-    # return lowercase_letters
+    letter_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    letter= random.choices(letter_list, weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], k=6)
+
+    print('these are your letters :')
+    dash_list= print(''.join(letter))
+
 
 if __name__=="__main__":
     app.run(host = "0.0.0.0", port = 5002, debug = True)
