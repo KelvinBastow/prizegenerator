@@ -14,7 +14,8 @@
 from flask import Flask
 from flask import Response, request
 from os import getenv
-from random import random
+import random
+
 
 app = Flask(__name__)
 
@@ -24,23 +25,16 @@ def hostname():
 
 @app.route("/randomnumber", methods=['GET'])
 def random_number_generator():
-    count = 0
-    num_string = ""
-    while(count < 6):
-        ran_num = random_rangeint(1,9)
-        num_string = num_string + str(ran_num)
-        count = count + 1
-    return Response(num_string())
+    num = 6
+    total = 0
+    mean = 0
+    for i in range(num):
+        total += random.randint(1,9)
+    mean = total/num
+    mean = round(mean)
+
+    return f'{mean}'
+
 
 if __name__=="__main__":
     app.run(host = "0.0.0.0", port = 5001, debug = True)
-
-# set an emply list
-
-# statt a loop that goes up to 6
-
-# in the loop, randomize between 0 and 9
-
-# add that random value to your empty list
-
-# return the list.

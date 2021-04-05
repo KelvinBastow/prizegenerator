@@ -40,15 +40,16 @@ def home():
 @app.route("/service-two")
 def service_two():
     service2_hostname = requests.get("http://service2:5001/hostname")
-    service2_response = requests.get("http://service2:5001/randomnumber")
-    return f'{service2_hostname.text} returned {service2_response.text}'
+    service2_response = requests.get("http://service2:5001/randomnumber").text
+    return f'{service2_response}'
+
 
 
 @app.route("/service-three")
 def service_three():
     service3_hostname = requests.get("http://service3:5002/hostname")
-    service3_response = requests.get("http://service3:5002/randomletter")
-    return f'{service3_hostname.text} returned {service3_response.text}'
+    service3_response = requests.get("http://service3:5002/randomletter").text
+    return f'{service3_response}'
 
 
 if __name__=="__main__":

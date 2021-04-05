@@ -24,16 +24,16 @@ def hostname():
 @app.route("/randomletter", methods=['GET'])
 def random_letter_generator():
     letter_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    letter= random.choices(letter_list, weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], k=6)
+    num =6
+    total = 0
+    mean = 0
+    for i in range (num):
+        random_letter = random.choice(letter_list)
+        total += letter_list.index(random_letter)
+    mean = total/num
+    mean = round(mean)
 
-    print('these are your letters :')
-    dash_list= print(''.join(letter))
-
-    letter_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    letter= random.choices(letter_list, weights=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1], k=6)
-
-    print('these are your letters :')
-    dash_list= print(''.join(letter))
+    return f'{mean}'
 
 
 if __name__=="__main__":
