@@ -23,7 +23,7 @@
 # One that creates 3 char Strings of lowercase letters
 # One that creates 2 char String of uppercase letters
 
-from flask import Flask, render_template
+from flask import Flask, render_template, Response, request
 from flask_sqlalchemy import SQLAlchemy
 import requests
 from os import getenv

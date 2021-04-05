@@ -10,9 +10,10 @@
 # One that creates 3 char Strings of lowercase letters
 # One that creates 2 char String of uppercase letters
 
-from flask import Flask
+from flask import Flask, Response, request
 from os import getenv
-from random import random
+from random import randint
+import string
 
 app = Flask(__name__)
 
@@ -20,17 +21,15 @@ app = Flask(__name__)
 def hostname():
     return str(getenv("HOSTNAME"))
 
-@app.route("/randomletter")
+@app.route("/randomletter", methods=['GET'])
 def random_letter_generator():
-    count = 0
-    string = ""
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'
-    while(count < 6):
-        new_letter = random.choice(alphabet)
-        string = string + new_letter
-        count = count + 1
-    return()
-    
+    letters = 8
+    uppercase_letters = "".join(random.choice(string.ascii_uppercase) for i in range(letters))
+#    lowercase_letters = "".join(random.choice(string.ascii_lowercase) for i in range(letters))
+
+
+    return uppercase_letters
+    # return lowercase_letters
 
 if __name__=="__main__":
     app.run(host = "0.0.0.0", port = 5002, debug = True)

@@ -12,6 +12,7 @@
 
 
 from flask import Flask
+from flask import Response, request
 from os import getenv
 from random import random
 
@@ -21,7 +22,7 @@ app = Flask(__name__)
 def hostname():
     return str(getenv("HOSTNAME"))
 
-@app.route("/randomnumber")
+@app.route("/randomnumber", methods=['GET'])
 def random_number_generator():
     count = 0
     num_string = ""
@@ -29,7 +30,7 @@ def random_number_generator():
         ran_num = random_rangeint(1,9)
         num_string = num_string + str(ran_num)
         count = count + 1
-    print (random.randint(0, 9))
+    return Response(num_string())
 
 if __name__=="__main__":
     app.run(host = "0.0.0.0", port = 5001, debug = True)
