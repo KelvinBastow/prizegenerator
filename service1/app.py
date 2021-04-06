@@ -17,7 +17,7 @@ def home():
     return f'{service_four_default_response.text} {service_four_service_two_response.text} {service_four_service_three_response.text}'
     
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:kelvinrules@mysql:3306/prizegenerator'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:kelvinrules@34.105.153.83/prizegenerator'
 
 if __name__=='__main__':
   app.run(host='0.0.0.0', port=5000, debug=True)

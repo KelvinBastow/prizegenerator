@@ -1,0 +1,8 @@
+all:
+  hosts:
+    deathstar:
+  children:
+    manager:
+      deathstar-manager:
+    workers:
+      deathstar-worker:
