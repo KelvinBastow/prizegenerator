@@ -26,7 +26,6 @@ def random_letter_generator():
     letter_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     num =6
     total = ""
-    # mean = 0
     for i in range (num):
         random_letter = random.choice(letter_list)
         total += random_letter

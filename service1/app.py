@@ -10,6 +10,7 @@ import requests
 app = Flask(__name__)
 # db = SQLAlchemy(app)
 @app.route("/", methods=['GET'])
+@app.route("/prizegenerator", methods=['GET'])
 def home():
     service_four_default_response=requests.get("http://service4:5003/").json()
     return f'{service_four_default_response["random_number"]} {service_four_default_response["random_letter"]}'
