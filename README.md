@@ -22,7 +22,13 @@ You should consider the concept of MVP (Minimum Viable Product) as you plan your
 
 # Trello Board
 
-Text
+![Trello Board](/images/trelloboard.jpg)
+
+My trello board progression, with a link to the most recent version [here][trello-link]!
+
+This shows you my backlog of tasks, what is currently being worked on and also what has been completed.
+
+[trello-link]: https://trello.com/b/hPAOsmi6/account-number-and-prize-generator
 
 # Developments Pipleine
 
@@ -38,4 +44,7 @@ Text
 
 # Refrences
 
-service 3 https://pynative.com/python-generate-random-string/
+- All my knowledge has been given to me from my teacher Dara Oladapo and Harry Volker :)
+- All me teaching had been from https://qa-community.co.uk/~/_/learning
+- For any HTML querys I used https://www.w3schools.com/html/default.asp
+- For any of my python querys I used https://thepythonguru.com/ and https://www.w3schools.com/python/default.asp/

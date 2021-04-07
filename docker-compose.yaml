@@ -3,15 +3,17 @@ services:
   service1:
     container_name: service1
     build: ./service1
-    image: python-service1:latest
+    image: kelvinbastow/python-service1:latest
     ports:
     - target: 5000
       published: 5000
       protocol: tcp
+    environment: 
+      DATABASE_URI: ${DATABASE_URI}
   service2:
     container_name: service2
     build: ./service2
-    image: python-service2:latest
+    image: kelvinbastow/python-service2:latest
     ports:
     - target: 5001
       published: 5001
@@ -19,7 +21,7 @@ services:
   service3:
     container_name: service3
     build: ./service3
-    image: python-service3:latest
+    image: kelvinbastow/python-service3:latest
     ports:
     - target: 5002
       published: 5002
@@ -27,18 +29,8 @@ services:
   service4:
     container_name: service4
     build: ./service4
-    image: python-service4:latest
+    image: kelvinbastow/python-service4:latest
     ports:
     - target: 5003
       published: 5003
       protocol: tcp
-  # db:
-  #   container_name: mysql
-  #   build: ./db
-  #   ports:
-  #   - target: 3306
-  #     published: 3306
-  #     protocol: tcp
-  #   environment:
-  #     MYSQL_DATABASE: prizegenerator
-  #     MYSQL_ROOT_PASSWORD: kelvinrules
