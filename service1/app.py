@@ -14,7 +14,8 @@ app = Flask(__name__)
 def home():
     service_four_default_response=requests.get("http://service4:5003/").json()
     return f'{service_four_default_response["random_number"]} {service_four_default_response["random_letter"]}'
-    
+  
+# return render_template('homepage.html', form=form, message=error)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:kelvinrules@34.105.153.83/prizegenerator'
 
