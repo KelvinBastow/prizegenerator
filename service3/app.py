@@ -25,15 +25,13 @@ def hostname():
 def random_letter_generator():
     letter_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     num =6
-    total = 0
-    mean = 0
+    total = ""
+    # mean = 0
     for i in range (num):
         random_letter = random.choice(letter_list)
-        total += letter_list.index(random_letter)
-    mean = total/num
-    mean = round(mean)
+        total += random_letter
 
-    return f'{mean}'
+    return total
 
 
 if __name__=="__main__":

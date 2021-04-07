@@ -23,7 +23,7 @@
 # One that creates 3 char Strings of lowercase letters
 # One that creates 2 char String of uppercase letters
 
-from flask import Flask, render_template, Response, request
+from flask import Flask, render_template, Response, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 import requests
 from os import getenv
@@ -35,15 +35,19 @@ db = SQLAlchemy(app)
 @app.route("/")
 def home():
     hostname = getenv("HOSTNAME")
-    return hostname
+    random_number = service_two()
+    random_letter = service_three()
+    # prize generator here, create code to mutlipy number 1-9 by how many repetitions there are of a singular letter
+    packet = { 
+        "random_number": random_number, "random_letter": random_letter
+    }
+    return jsonify(packet)
 
 @app.route("/service-two")
 def service_two():
     service2_hostname = requests.get("http://service2:5001/hostname")
     service2_response = requests.get("http://service2:5001/randomnumber").text
     return f'{service2_response}'
-
-
 
 @app.route("/service-three")
 def service_three():

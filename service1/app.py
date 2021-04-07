@@ -11,10 +11,8 @@ app = Flask(__name__)
 # db = SQLAlchemy(app)
 @app.route("/", methods=['GET'])
 def home():
-    service_four_default_response=requests.get("http://service4:5003/")
-    service_four_service_two_response=requests.get("http://service4:5003/service-two")
-    service_four_service_three_response=requests.get("http://service4:5003/service-three")
-    return f'{service_four_default_response.text} {service_four_service_two_response.text} {service_four_service_three_response.text}'
+    service_four_default_response=requests.get("http://service4:5003/").json()
+    return f'{service_four_default_response["random_number"]} {service_four_default_response["random_letter"]}'
     
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:kelvinrules@34.105.153.83/prizegenerator'
