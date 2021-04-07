@@ -38,8 +38,12 @@ def home():
     random_number = service_two()
     random_letter = service_three()
     # prize generator here, create code to mutlipy number 1-9 by how many repetitions there are of a singular letter
+    if random_letter.count(random_letter[0]) > 1:
+        prize_money = int(random_number) * 10
+    else:
+        prize_money = int(random_number) * 5
     packet = { 
-        "random_number": random_number, "random_letter": random_letter
+        "random_number": random_number, "random_letter": random_letter, "prize_money": prize_money
     }
     return jsonify(packet)
 
