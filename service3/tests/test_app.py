@@ -3,7 +3,7 @@ from flask import Flask, url_for
 from flask import Response, request
 from os import getenv
 import random
-from service2 import app
+from service3 import app
 
 #pytest --cov=app --cov-report=term-missing
 #pytest --cov . --cov-report html
@@ -21,5 +21,6 @@ class TestBase(TestCase):
     def tearDown(self):
         # Will be called after every test
 
-class TestRandomNumberGenerator(TestBase):
-    def test_random_number_generator(self):
+class TestRandomLetterGenerator(TestBase):
+    def test_random_letter_generator(self):
+        #need to test app creates 6 random letters

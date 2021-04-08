@@ -23,3 +23,4 @@ class TestBase(TestCase):
 
 class TestRandomNumberGenerator(TestBase):
     def test_random_number_generator(self):
+        #test that app shows information from service4 and displays the prize value

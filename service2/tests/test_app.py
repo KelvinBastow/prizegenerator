@@ -23,3 +23,4 @@ class TestBase(TestCase):
 
 class TestRandomNumberGenerator(TestBase):
     def test_random_number_generator(self):
+        #write test for random number generation
