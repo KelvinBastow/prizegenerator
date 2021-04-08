@@ -23,4 +23,5 @@ class TestBase(TestCase):
 
 class TestRandomNumberGenerator(TestBase):
     def test_random_number_generator(self):
-        #write test for combining service2 & 3 together to create result
+        response = self.client.get(url_for('prizegenerator'), follow_redirects =True)
+        self.assertEqual(response.status_code, 200)
