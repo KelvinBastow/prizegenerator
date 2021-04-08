@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Configure Swarm'){
             //run playbook define inventory
-            sh 'ansible-playbook playbook-1.yaml'
+            sh 'ansible-playbook -i inventory.yaml playbook-1.yaml'
         
         }
         stage('Deploy'){
