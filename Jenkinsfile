@@ -21,6 +21,7 @@ pipeline {
         stage('Configure Swarm'){
             //run playbook define inventory
             sh 'ansible-playbook playbook-1.yaml'
+        
         }
         stage('Deploy'){
             sh 'docker stack deploy --compose-file docker-compose.yaml prizegenerator'
