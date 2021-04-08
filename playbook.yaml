@@ -1,11 +1,13 @@
-- hosts: all
-  tasks:
-  - name: 'Install NGINX'
-    apt:
-      name: nginx
-      state: latest
-      update_cache: true
-  - name: 'Start NGINX Service'
-    service:
-      name: nginx
-      state: started
+- hosts: managers
+  roles:
+  - docker
+  - manager
+  
+- hosts: workers
+  roles:
+  - docker
+  - worker
+
+- hosts: NGINX
+  roles: 
+  - nginx

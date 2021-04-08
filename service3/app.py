@@ -18,7 +18,7 @@ def random_letter_generator():
         random_letter = random.choice(letter_list)
         total += random_letter
 
-    return total
+    return str(total)
 
 if __name__=="__main__":
     app.run(host = "0.0.0.0", port = 5002, debug = True)

@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route("/", methods=['GET'])
 @app.route("/prizegenerator", methods=['GET'])
 def home():
-    service_four_default_response=requests.get("http://service4:5003/").json()
+    service_four_default_response=requests.get("http://service4:5003/prizecreator").json()
     prize = f'{service_four_default_response["prize_money"]}'
 
     return render_template('homepage.html', message=prize)

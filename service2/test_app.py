@@ -14,5 +14,10 @@ class TestBase(TestCase):
 
 class TestRandomNumberGenerator(TestBase):
     def test_random_number_generator(self):
-        response = self.client.get(url_for("random_number_generator"))
+        response = self.client.get('http://35.242.157.198:5001/randomnumber')
         self.assertEqual(len(response.data), 1)
+
+class TestRandomNumberGen(TestBase):
+    def test_random_number_gen(self):
+        response = self.client.get('http://35.242.157.198:5001/randomnumber')
+        self.assertEqual(response.status_code, 200)
