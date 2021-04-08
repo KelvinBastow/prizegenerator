@@ -1,11 +1,12 @@
 pipeline {
     agent any
     environment{
-        DATABASE_URI
+        DATABASE_URI = credentials('DATABASE_URI')
+
     }
     stages{
         stage('Test'){
-            sh 'testing.sh'
+            sh 'bash/prizegenerator/testing.sh'
             
         }
         stage('Build'){
@@ -19,9 +20,10 @@ pipeline {
         }
         stage('Configure Swarm'){
             //run playbook define inventory
+            sh 'ansible-playbook playbook-1.yaml'
         }
         stage('Deploy'){
-            sh 'docker stack deploy --compose-file docker-compose.yaml'
+            sh 'docker stack deploy --compose-file docker-compose.yaml prizegenerator'
             sh 'docker stack services'
         }
     }
