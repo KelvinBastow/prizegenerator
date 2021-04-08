@@ -27,5 +27,8 @@ pipeline {
             sh 'docker stack deploy --compose-file docker-compose.yaml prizegenerator'
             sh 'docker stack services'
         }
+        stage('NGINX'){
+            sh 'cd ansible && ansible-playbook -i inventory.yaml playbook.yaml'
+        }
     }
 }
