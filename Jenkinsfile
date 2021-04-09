@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-                dir("main-services"){
+                dir("prizegenerator"){
                 sh "bash deploy.sh"
             }
         }
