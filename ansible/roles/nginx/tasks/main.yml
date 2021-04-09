@@ -1,19 +1,19 @@
 ---
 # tasks file for nginx
-- name: 'install nginx with apt'
+- name: Install NGINX With APT
   become: true
   apt:
     pkg:
     - nginx
     state: latest
     update_cache: true
-- name: 'configure nginx to be a load balancer'
+- name: Configure NGINX To Be A Load Balancer
   become: true
   copy:
     src: nginx.conf
     dest: /etc/nginx/nginx.conf
   notify: 'reload nginx'    
-- name: 'make sure that the nginx service is started'
+- name: Make Sure That The NGINX Service Is Started'
   become: true
   service:
     name: nginx
