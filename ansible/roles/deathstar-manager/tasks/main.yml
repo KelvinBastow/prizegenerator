@@ -7,4 +7,4 @@
   register: swarm_info
 - name: Print Swarm Info
   debug:
-  msg: "{{ swarm_info }}"
+    msg: "{{ swarm_info }}"

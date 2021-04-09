@@ -2,7 +2,6 @@ pipeline {
     agent any
     environment{
         DATABASE_URI = credentials('DATABASE_URI')
-
     }
     stages{
         stage('Test'){
