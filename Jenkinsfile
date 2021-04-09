@@ -28,7 +28,8 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-                sh "bash ./deploy.sh"
+                dir("main-services"){
+                sh "bash deploy.sh"
             }
         }
     }
