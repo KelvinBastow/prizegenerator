@@ -28,8 +28,7 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-            sh 'docker stack deploy --compose-file docker-compose.yaml prizegenerator'
-            sh 'docker stack services'
+                sh "bash ./deploy.sh"
             }
         }
     }
