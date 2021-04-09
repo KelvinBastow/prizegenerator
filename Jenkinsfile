@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Configure Swarm'){
             steps{
-            sh 'ansible-playbook -i inventory.yaml playbook-1.yaml'
+            sh '/home/jenkins/.local/bin/ansible-playbook -i inventory.yaml playbook-1.yaml'
         }
         }
         stage('Deploy'){
