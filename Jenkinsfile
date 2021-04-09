@@ -5,7 +5,7 @@ pipeline {
     }
     stages{
         stage('Test'){
-            sh 'bash/prizegenerator/testing.sh'
+            sh 'bash ./testing.sh'
             
         }
         stage('Build'){
