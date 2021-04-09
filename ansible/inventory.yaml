@@ -1,4 +1,6 @@
 all:
+  hosts:
+    nginx:
   children:
     manager:
       hosts:
@@ -13,5 +15,4 @@ all:
     docker_users:
       - username: jenkins
       - username: kelvin
-  hosts:
-    nginx:
+  

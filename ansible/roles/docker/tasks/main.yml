@@ -33,6 +33,7 @@
     state: latest
     update_cache: true
 - name: Add User To Docker Group
+  become: true
   user:
     name: "{{ item.username }}"
     groups: docker
