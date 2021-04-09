@@ -19,16 +19,12 @@ pipeline {
 
         }
         stage('Configure Swarm'){
-            //run playbook define inventory
             sh 'ansible-playbook -i inventory.yaml playbook-1.yaml'
         
         }
         stage('Deploy'){
             sh 'docker stack deploy --compose-file docker-compose.yaml prizegenerator'
             sh 'docker stack services'
-        }
-        stage('NGINX'){
-            sh 'cd ansible && ansible-playbook -i inventory.yaml playbook.yaml'
         }
     }
 }

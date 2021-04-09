@@ -1,9 +1,9 @@
-- hosts: managers
+- hosts: deathstar-manager
   roles:
   - docker
   - manager
   
-- hosts: workers
+- hosts: deathstar-worker
   roles:
   - docker
   - worker
