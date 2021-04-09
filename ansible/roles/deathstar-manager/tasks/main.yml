@@ -1,6 +1,6 @@
 ---
 # tasks file for deathstar_manager
-- name: Init a new swarm with default parameters
+- name: Init A New Swarm With Default Parameters
   become: true
   community.docker.docker_swarm:
     state: present

@@ -5,7 +5,7 @@ all:
     manager:
       hosts:
         deathstar-manager:
-    workers:
+    worker:
       hosts:
         deathstar-worker:
   vars:

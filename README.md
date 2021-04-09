@@ -48,7 +48,7 @@ Here is my risk assessments deatailing all the risks that have and will be encou
 
 # Refrences
 
-- All my knowledge has been given to me from my teacher Dara Oladapo and Harry Volker :)
+- All my knowledge has been given to me from my teacher Dara Oladapo and Harry Volker, as well as my cohort who have helped me filter through my issues :)
 - All me teaching had been from https://qa-community.co.uk/~/_/learning
 - For any HTML querys I used https://www.w3schools.com/html/default.asp
 - For any of my python querys I used https://thepythonguru.com/ and https://www.w3schools.com/python/default.asp/

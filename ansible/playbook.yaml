@@ -2,12 +2,10 @@
   roles:
   - docker
   - deathstar-manager
-  
 - hosts: worker
   roles:
   - docker
   - deathstar-worker
-
-- hosts: NGINX
+- hosts: nginx
   roles: 
   - nginx
