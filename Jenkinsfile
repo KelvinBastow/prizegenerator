@@ -11,9 +11,7 @@ pipeline {
         }
         stage('Build'){
             steps{
-                sh 'docker network prune -y'
                 sh 'docker-compose build'
-                sh 'docker-compose up -d'
             }
         }
         stage('Push'){
