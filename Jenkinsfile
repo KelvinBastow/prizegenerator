@@ -2,7 +2,6 @@ pipeline {
     agent any
     environment{
         DATABASE_URI = credentials('DATABASE_URI')
-        // DOCKERHUB = credentials('DOCKERHUB')
     }
     stages{
         stage('Test'){
@@ -35,6 +34,3 @@ pipeline {
         }
     }
 }
-
-
-// mysql+pymysql://root:root@34.105.153.83/prizegenerator
