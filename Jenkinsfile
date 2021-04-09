@@ -12,6 +12,7 @@ pipeline {
         stage('Build'){
             steps{
                 sh 'docker-compose build'
+                sh 'docker-compose up -d'
             }
         }
         stage('Push'){
@@ -27,7 +28,7 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-            sh 'docker stack deploy --compose-file docker-compose.yaml prizegenerator'
+            sh "bash deploy.sh"
             }
         }
     }
