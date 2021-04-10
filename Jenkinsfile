@@ -27,9 +27,7 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-            sh "bash deploy.sh"
-            sh 'apt update'
-            sh 'apt upgrade'
+            sh 'bash deploy.sh'
             }
         }
     }
