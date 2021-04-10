@@ -1,9 +1,5 @@
-import requests
 from flask_testing import TestCase
-from flask import Flask, url_for
-from flask import Response, request
-from os import getenv
-import random
+from flask import url_for
 from app import app
 from mock import patch
 
@@ -14,17 +10,17 @@ class TestBase(TestCase):
     def create_app(self):
         return app
 
-class TestPrizeCreation(TestBase):
-    def test_prize_creation(self):
-        # write test for combining service 2 & 3 together to create result
-        with patch('requests.get') as g:
+# class TestPrizeCreation(TestBase):
+#     def test_prize_creation(self):
+#         # write test for combining service 2 & 3 together to create result
+#         with patch('requests.get') as g:
 
-            response = self.client.get(url_for("test_prize_creation"))
-            g.return_value.text = "abbcde"
+#             response = self.client.get(url_for("test_prize_creation"))
+#             g.return_value.text = "abbcde"
 
-            self.assertIn(b'6', response.data)
+#             self.assertIn(b'6', response.data)
 
 class TestPrizeCreator(TestBase):
     def test_prize_creator(self):
-        response = self.client.get('http://35.242.157.198:5003/prizecreator')
+        response = self.client.get(url_for('home'))
         self.assertEqual(response.status_code, 200)
