@@ -58,7 +58,7 @@ Service4
 
 # Risk Assessment
 
-![Risk Assessment](link)
+![Risk Assessment](/images/RiskAssessment.jpg)
 
 Here is my risk assessments deatailing all the risks that have and will be encountered during this project.
 
