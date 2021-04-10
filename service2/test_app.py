@@ -1,12 +1,6 @@
-from flask_testing import TestCase
-from flask import Flask, url_for
-from flask import Response, request
-from os import getenv
-import random
 from app import app
-
-#pytest --cov=app --cov-report=term-missing
-#pytest --cov . --cov-report html
+from flask_testing import TestCase
+from flask import url_for
 
 class TestBase(TestCase):
     def create_app(self):
