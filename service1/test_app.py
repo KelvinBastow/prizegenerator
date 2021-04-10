@@ -1,28 +1,28 @@
+from prizegenerator.service1.app import PrizeGenerator
 from flask_testing import TestCase
-from flask import Flask, url_for
-from flask import Response, request
-from os import getenv
-import random
-from app import app
-
-#pytest --cov=app --cov-report=term-missing
-#pytest --cov . --cov-report html
+from flask import url_for
+from app import app ,db
 
 class TestBase(TestCase):
     def create_app(self):
-        app
-        # Pass in testing configurations for the app.
+        app.config.update(SQLALCHEMY_DATABASE_URI="sqlite:///",
+                SECRET_KEY='TEST_SECRET_KEY',
+                DEBUG=True,
+                WTF_CSRF_ENABLED=False
+                )
+        return app
 
-    # def setUp(self):
-    #     # Will be called before every test
-    #     # Create table
-    #     # Create test registree
-    #     # Save users to database
+    def setUp(self):
+        db.create_all()
+        prizegenerator = PrizeGenerator(random_number = form.random_number.data ,random_letter = form.random_letter.data)
+        db.session.add(prizegenerator)
+        db.session.commit()
 
-    # def tearDown(self):
-    #     # Will be called after every test
+    def tearDown(self):
+        db.session.remove()
+        db.drop_all()
 
 class TestPrizeGenerator(TestBase):
     def test_prize_generator(self):
-        response = self.client.get('http://35.242.157.198:5000')
+        response = self.client.get(url_for('test_prize_generator'))
         self.assertEqual(response.status_code, 200)
