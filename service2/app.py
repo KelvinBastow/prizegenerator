@@ -11,7 +11,7 @@ def hostname():
 
 @app.route("/randomnumber", methods=['GET'])
 def random_number_generator():
-    return f"{random.randint(1,20)}"
+    return f"{random.randint(1,9)}"
 
 
 if __name__=="__main__":
