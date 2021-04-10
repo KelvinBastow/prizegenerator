@@ -5,7 +5,7 @@ PyMySQL
 requests
 pytest
 pytest-cov
-flask-testing
+Flask-Testing
 mock
 
 # python3 -m venv venv
