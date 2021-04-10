@@ -5,7 +5,7 @@ from os import getenv
 app = Flask(__name__)
 
 @app.route("/prizecreator")
-def home():
+def prizecreator():
     hostname = getenv("HOSTNAME")
     random_number = requests.get("http://service2:5001/randomnumber").text
     random_letter = requests.get("http://service3:5002/randomletter").text
