@@ -1,7 +1,7 @@
 from flask_testing import TestCase
 from flask import url_for
 from app import app
-from mock import patch
+from mock
 
 #pytest --cov=app --cov-report=term-missing
 #pytest --cov . --cov-report html
