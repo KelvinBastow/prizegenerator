@@ -1,0 +1,13 @@
+Flask
+Flask-SQLAlchemy
+SQLAlchemy
+PyMySQL
+requests
+pytest
+pytest-cov
+Flask-Testing
+mock
+
+# python3 -m venv venv
+# source venv/bin/activate
+# pip3 install -r requirements.txt

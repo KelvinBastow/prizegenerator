@@ -1,0 +1,11 @@
+- hosts: manager
+  roles:
+  - docker
+  - deathstar-manager
+- hosts: worker
+  roles:
+  - docker
+  - deathstar-worker
+- hosts: nginx
+  roles: 
+  - nginx
