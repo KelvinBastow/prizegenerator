@@ -1,5 +1,5 @@
 from app import app, db, PrizeGenerator
-from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 from flask_testing import TestCase
 from flask import url_for
 
