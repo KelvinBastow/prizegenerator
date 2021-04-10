@@ -1,5 +1,3 @@
-# from os import error
-# from prizegenerator import random_number_generator
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 import requests
@@ -21,7 +19,7 @@ class PrizeGenerator(db.Model):
 def home():
     service_four_default_response=requests.get("http://service4:5003/prizecreator").json()
     prize = f'{service_four_default_response["prize_money"]}'
-    randomprize = models.PrizeGenerator(random_number = service4['random_number'], random_letter = service4['random_letter'])
+    randomprize = PrizeGenerator(random_number = service_four_default_response['random_number'], random_letter = service_four_default_response['random_letter'])
     db.session.add(randomprize)
     db.session.commit()
 
