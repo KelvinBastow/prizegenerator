@@ -3,6 +3,7 @@ Flask-SQLAlchemy
 SQLAlchemy
 PyMySQL
 requests
+request
 pytest
 pytest-cov
 flask-testing

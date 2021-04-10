@@ -1,6 +1,6 @@
-from os import error
-from prizegenerator.service2.app import random_number_generator
-from flask import Flask, render_template, Response, request
+# from os import error
+# from prizegenerator import random_number_generator
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 import requests
 from os import getenv
@@ -8,7 +8,7 @@ from os import getenv
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = getenv("DATABASE_URI")
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
 class PrizeGenerator(db.Model):
