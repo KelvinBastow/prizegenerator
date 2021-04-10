@@ -22,5 +22,5 @@ class TestBase(TestCase):
 
 class TestPrizeCreator(TestBase):
     def test_prize_creator(self):
-        response = self.client.get(url_for('home'))
+        response = self.client.get(url_for('test_prize_creator'))
         self.assertEqual(response.status_code, 200)
