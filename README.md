@@ -33,7 +33,7 @@ This shows you my backlog of tasks, what is currently being worked on and also w
 
 # Development Pipleine
 
-![Development Pipeline](link)
+![Development Pipeline](/images/MyDevelopmentPipeline.jpg)
 
 Here is a diagram displaying and showing you the process of application and the services used to get from point A to point B. The Code and Jenkins is written and installed on one VM (Virtual Machine), the VM is linked to GitHub where the code is pushed to and using a webhook is linked to Jenkins so that the code can be updated publicly. When the code from GitHub is pushed to Jenkins, this then tests and builds the program and is then pushed to DockerHub as well. The Code creates the containers on two separate VM's one Manager and one Worker and then this is then accessible to the user via the NGINX server which is also acting as a load balancer.
 # Test Results
