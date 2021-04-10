@@ -11,6 +11,7 @@
     - lsb-release
     - python3
     - python3-pip
+    - flask
     state: latest
     update_cache: true
 - name: Get Docker APT Key
