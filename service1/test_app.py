@@ -14,7 +14,7 @@ class TestBase(TestCase):
 
     def setUp(self):
         db.create_all()
-        prizegenerator = PrizeGenerator(random_number = form.random_number.data ,random_letter = form.random_letter.data)
+        prizegenerator = PrizeGenerator(random_number = '5' ,random_letter = 'gfhyrh')
         db.session.add(prizegenerator)
         db.session.commit()
 
