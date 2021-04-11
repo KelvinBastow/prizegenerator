@@ -17,9 +17,9 @@ class PrizeGenerator(db.Model):
 @app.route('/', methods=['GET'])
 @app.route('/prizegenerator', methods=['GET'])
 def home():
-    service_four_default_response=requests.get("http://service4:5003/prizecreator").json()
+    service_four_default_response=requests.get('http://service4:5003/prizecreator').json()
     prize = f'{service_four_default_response["prize_money"]}'
-    randomprize = PrizeGenerator(random_number = service_four_default_response['random_number'], random_letter = service_four_default_response['random_letter'])
+    randomprize = PrizeGenerator(random_number = service_four_default_response["random_number"], random_letter = service_four_default_response["random_letter"])
     db.session.add(randomprize)
     db.session.commit()
 

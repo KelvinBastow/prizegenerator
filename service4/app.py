@@ -15,7 +15,7 @@ def prizecreator():
     else:
         prize_money = int(random_number) * 5
     packet = { 
-        'random_number': random_number, 'random_letter': random_letter, 'prize_money': prize_money
+        "random_number": random_number, "random_letter": random_letter, "prize_money": prize_money
     }
     return jsonify(packet)
 

@@ -5,13 +5,13 @@ import random
 
 app = Flask(__name__)
 
-@app.route("/hostname")
+@app.route('/hostname')
 def hostname():
-    return str(getenv("HOSTNAME"))
+    return str(getenv('HOSTNAME'))
 
 @app.route('/randomnumber', methods=['GET'])
 def random_number_generator():
-    return f"{random.randint(1,20)}"
+    return f'{random.randint(1,20)}'
 
 
 if __name__=='__main__':
