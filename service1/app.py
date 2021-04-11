@@ -5,7 +5,7 @@ from os import getenv
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = getenv("DATABASE_URI")
+app.config['SQLALCHEMY_DATABASE_URI'] = getenv('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 db = SQLAlchemy(app)
 
@@ -14,8 +14,8 @@ class PrizeGenerator(db.Model):
     random_number = db.Column(db.String(50), nullable = False)
     random_letter = db.Column(db.String(50), nullable = False)
 
-@app.route("/", methods=['GET'])
-@app.route("/prizegenerator", methods=['GET'])
+@app.route('/', methods=['GET'])
+@app.route('/prizegenerator', methods=['GET'])
 def home():
     service_four_default_response=requests.get("http://service4:5003/prizecreator").json()
     prize = f'{service_four_default_response["prize_money"]}'
