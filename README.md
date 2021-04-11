@@ -4,7 +4,7 @@ My project is to build an application that generates a random number and letter 
 
 The application will be set-up using a variety of tools such as Docker, Jenkins, Flask, Python and SQL.
 
-# Requirments
+# Requirements
 
 The requirements set for the project are below.
 Note that these are a minimum set of requirements and can be added onto during the duration of the project.
