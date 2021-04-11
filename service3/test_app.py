@@ -12,7 +12,7 @@ class TestRandomLetterGenerator(TestBase):
     def test_random_letter_generator(self):
         response = requests.get(url_for('random_letter_generator')).text
         response = str(response)
-        self.assertEqual(len(response), 3)
+        self.assertEqual(len(response), '3')
 
 class TestRandomLetterGen(TestBase):
     def test_random_letter_gen(self):

@@ -3,8 +3,10 @@ sudo apt-get install python3-venv
 python3 -m venv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
+pip3 install Flask-Testing
 pip3 install pytest
 pip3 install pytest-cov
+pip3 install requests_mock
 
 # python3 -m pytest service1 --cov=service1
 # python3 -m pytest service2 --cov=service2
