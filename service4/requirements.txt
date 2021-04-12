@@ -6,6 +6,7 @@ requests
 pytest
 pytest-cov
 Flask-Testing
+requests_mock
 mock
 
 # python3 -m venv venv
